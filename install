@@ -62,6 +62,13 @@ ln -s $DOTFILES/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES/gitignore $HOME/.gitignore
 ln -s $DOTFILES/themes/*.zsh-theme ~/.oh-my-zsh/themes
 
+# Setting iTerm2 prefs
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string $DOTFILES
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# Setting up Moom prefs
+defaults import com.manytricks.Moom $DOTFILES/moom.plist
+
 echo "Installing packages for Sublime Text"
 curl -fsSL https://packagecontrol.io/Package%20Control.sublime-package -o $HOME/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package
 rm -rf $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings

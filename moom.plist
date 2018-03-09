@@ -1,0 +1,74 @@
+{
+    "Application Mode" = 2;
+    "Configuration Grid: Columns" = 9;
+    "Configuration Grid: Rows" = 9;
+    "Custom Controls" =     (
+                {
+            Action = 19;
+            "Apply to Overlapping Windows" = 0;
+            "Auto-Trigger" = 0;
+            "Auto-Trigger Display Count" = 1;
+            "Center Mode" = 0;
+            Collapsed = 0;
+            "Confine to Display" = 0;
+            "Hot Key" =             {
+                Identifier = "3DCCAFB0-5F2C-4720-8247-AD1116218447";
+                "Key Code" = 126;
+                "Modifier Flags" = 12321065;
+                "Visual Representation" = "\\U2303\\U2325\\U2318\\U2191";
+            };
+            Identifier = "3DCCAFB0-5F2C-4720-8247-AD1116218447";
+            "Loop Through Displays" = 0;
+            "Move Delta" = 50;
+            "Move Direction" = 5;
+            "Move to Edge/Corner Direction" = 5;
+            "Relative Frame" = "{{0, 0}, {1, 1}}";
+            "Resize Anchor" = 10;
+            "Resize Height Unit" = 0;
+            "Resize Proportionally" = 0;
+            "Resize Size" = "{800, 600}";
+            "Resize Width Unit" = 0;
+        },
+                {
+            Action = 19;
+            "Apply to Overlapping Windows" = 0;
+            "Auto-Trigger" = 0;
+            "Auto-Trigger Display Count" = 1;
+            "Center Mode" = 0;
+            Collapsed = 0;
+            "Confine to Display" = 0;
+            "Hot Key" =             {
+                Identifier = "A6788DA1-143F-4464-99D3-4C24947981B2";
+                "Key Code" = 125;
+                "Modifier Flags" = 12321065;
+                "Visual Representation" = "\\U2303\\U2325\\U2318\\U2193";
+            };
+            Identifier = "A6788DA1-143F-4464-99D3-4C24947981B2";
+            "Loop Through Displays" = 0;
+            "Move Delta" = 50;
+            "Move Direction" = 5;
+            "Move to Edge/Corner Direction" = 5;
+            "Relative Frame" = "{{0.1111111111111111, 0.1111111111111111}, {0.7777777777777779, 0.7777777777777779}}";
+            "Resize Anchor" = 10;
+            "Resize Height Unit" = 0;
+            "Resize Proportionally" = 0;
+            "Resize Size" = "{800, 600}";
+            "Resize Width Unit" = 0;
+        }
+    );
+    "NSToolbar Configuration Preferences (Independent) 3174" =     {
+        "TB Display Mode" = 1;
+        "TB Icon Size Mode" = 1;
+        "TB Is Shown" = 1;
+        "TB Size Mode" = 1;
+    };
+    "PMSparkleWrapper Status" =     {
+        "Check Date" = 1520624904;
+        "Current Version" = "3.2.10";
+        "Update Version" = "";
+    };
+    SUEnableAutomaticChecks = 1;
+    SUHasLaunchedBefore = 1;
+    SULastCheckTime = "2018-03-09 19:48:23 +0000";
+    "Stealth Mode" = 1;
+}
