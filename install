@@ -57,6 +57,7 @@ rm -rf $DOTFILES
 rm -rf $HOME/.zshrc $HOME/.gitignore $HOME/.gitconfig
 
 ln -s $DOTFILES/zshrc $HOME/.zshrc
+ln -s $DOTFILES/aliases $HOME/.aliases
 ln -s $DOTFILES/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES/gitignore $HOME/.gitignore
 ln -s $DOTFILES/*.zsh-theme ~/.oh-my-zsh/themes
