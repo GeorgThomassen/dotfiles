@@ -19,7 +19,7 @@ rm -rf $DOTFILES/omz.sh
 echo "Installing Homebrew..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
-brew tap homebrew/php/composer
+brew tap homebrew/php
 brew update
 
 # Installing apps
@@ -35,11 +35,17 @@ brew install php
 brew install composer
 brew install node
 brew install yarn
+brew install mariadb
 
+echo "Starting services..."
+brew services start mariadb
+
+echo "Installing global composer packages..."
 composer global require "consolidation/cgr"
 $HOME/.composer/vendor/bin/cgr "laravel/installer"
 $HOME/.composer/vendor/bin/cgr "laravel/valet"
 $HOME/.composer/vendor/bin/valet install
+mkdir $HOME/Sites
 $HOME/.composer/vendor/bin/valet park $HOME/Sites
 
 echo "Setting up dotfiles..."
@@ -53,7 +59,6 @@ ln -s $DOTFILES/zshrc $HOME/.zshrc
 ln -s $DOTFILES/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES/gitignore $HOME/.gitignore
 ln -s $DOTFILES/*.zsh-theme ~/.oh-my-zsh/themes
-mkdir $HOME/Sites
 
 echo "Setting up SSH"
 echo "What's your email?"
