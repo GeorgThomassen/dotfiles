@@ -60,7 +60,7 @@ ln -s $DOTFILES/zshrc $HOME/.zshrc
 ln -s $DOTFILES/aliases $HOME/.aliases
 ln -s $DOTFILES/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES/gitignore $HOME/.gitignore
-ln -s $DOTFILES/*.zsh-theme ~/.oh-my-zsh/themes
+ln -s $DOTFILES/themes/*.zsh-theme ~/.oh-my-zsh/themes
 
 echo "Setting up SSH"
 echo "What's your email?"
