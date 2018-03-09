@@ -3,10 +3,16 @@
 # Only run if $HOME is set
 if [ -z "$HOME" ]; then echo "\$HOME not set"; exit 1; fi
 
+DOTFILES=$HOME/.dotfiles
+
 # ZSH Setup
 #
 echo "Installing Oh-My-ZSH..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o $DOTFILES/omz.sh
+sed -i ''  '/echo/d' $DOTFILES/omz.sh
+sed -i ''  '/env zsh/d' $DOTFILES/omz.sh
+sh -c $DOTFILES/omz.sh
+rm -rf $DOTFILES/omz.sh
 
 # Download and install Homebrew
 #
@@ -37,9 +43,6 @@ $HOME/.composer/vendor/bin/valet install
 $HOME/.composer/vendor/bin/valet park $HOME/Sites
 
 echo "Setting up dotfiles..."
-
-DOTFILES=$HOME/.dotfiles
-echo "Cloning repository to ~/.dotfiles..."
 rm -rf $DOTFILES
 /usr/bin/git clone --depth=1 https://github.com/GeorgThomassen/dotfiles.git $DOTFILES
 /usr/bin/git --git-dir $DOTFILES/.git remote rm origin
