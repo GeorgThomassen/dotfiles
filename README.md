@@ -1,3 +1,3 @@
 ```
-  sh -c "$(curl -s https://raw.githubusercontent.com/GeorgThomassen/dotfiles/master/install)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/GeorgThomassen/dotfiles/master/install)"
 ```
