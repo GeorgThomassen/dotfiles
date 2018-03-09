@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Only run if $HOME is set
 if [ -z "$HOME" ]; then echo "\$HOME not set"; exit 1; fi
