@@ -2,6 +2,8 @@ alias code="cd ~/Sites"
 alias sites="cd ~/Sites"
 alias dotfiles="cd ~/.dotfiles"
 
+alias c="clear"
+
 alias gs="git status"
 alias gl="git log"
 alias gcom="git checkout master"
