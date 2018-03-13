@@ -29,3 +29,7 @@ alias art="php artisan"
 function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
+
+function status() {
+    (ps aux | grep -i $1 | grep -v grep | wc -l)
+}
