@@ -1,27 +1,24 @@
 #!/bin/bash
-
-# Only run if $HOME is set
 if [ -z "$HOME" ]; then echo "\$HOME not set"; exit 1; fi
 
 DOTFILES=$HOME/.dotfiles
 mkdir $DOTFILES
 
-# Download and install Homebrew
-#
+echo
 echo "Installing Homebrew..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
 brew tap homebrew/php
 brew update
 
-# Installing apps
+echo
 echo "Installing apps..."
 brew cask install sublime-text
 brew cask install iterm2
 brew cask install moom
 brew cask install sequel-pro
 
-# Installing tools
+echo
 echo "Installing tools..."
 brew install php
 brew install composer
@@ -40,8 +37,7 @@ $HOME/.composer/vendor/bin/valet install
 mkdir $HOME/Sites
 $HOME/.composer/vendor/bin/valet park $HOME/Sites
 
-# ZSH Setup
-#
+echo
 echo "Installing Oh-My-ZSH..."
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o $DOTFILES/omz.sh
 sed -i ''  '/echo/d' $DOTFILES/omz.sh
@@ -49,6 +45,7 @@ sed -i ''  '/env zsh/d' $DOTFILES/omz.sh
 sh $DOTFILES/omz.sh
 rm -rf $DOTFILES/omz.sh
 
+echo
 echo "Setting up dotfiles..."
 rm -rf $DOTFILES
 /usr/bin/git clone --depth=1 https://github.com/GeorgThomassen/dotfiles.git $DOTFILES
@@ -62,23 +59,27 @@ ln -s $DOTFILES/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES/gitignore $HOME/.gitignore
 ln -s $DOTFILES/themes/*.zsh-theme ~/.oh-my-zsh/themes
 
-# Setting iTerm2 prefs
+# Setting prefs
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string $DOTFILES
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+defaults import com.manytricks.Moom $DOTFILES/com.manytricks.Moom
 
+echo
 echo "Installing packages for Sublime Text"
+mkdir -p $HOME/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/
+mkdir -p $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
 curl -fsSL https://packagecontrol.io/Package%20Control.sublime-package -o $HOME/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package
 rm -rf $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 rm -rf $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 ln -s $HOME/.dotfiles/Preferences.sublime-settings $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 ln -s $HOME/.dotfiles/Package\ Control.sublime-settings $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 
+echo
 echo "Setting up SSH"
 echo "What's your email?"
 read EMAIL
 
-# Setting up SSH
-#
+echo
 echo "Generating SSH keys for "$EMAIL"..."
 ssh-keygen -t rsa -b 4096 -C $EMAIL -f $HOME/.ssh/id_rsa
 echo "Starting SSH-agent..."
@@ -95,6 +96,7 @@ ssh-add -K $HOME/.ssh/id_rsa
 pbcopy < $HOME/.ssh/id_rsa.pub
 echo "The public key has been copied to the clipboard"
 echo "Go to https://github.com/settings/keys to add it"
+
 echo
 echo "Done setting up dotfiles..."
 exit 0;
