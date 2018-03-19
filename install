@@ -17,6 +17,7 @@ brew cask install sublime-text
 brew cask install iterm2
 brew cask install moom
 brew cask install sequel-pro
+brew cask install phpstorm
 
 echo
 echo "Installing tools..."
@@ -26,9 +27,11 @@ brew install node
 brew install yarn
 brew install mariadb
 
+echo
 echo "Starting services..."
 brew services start mariadb
 
+echo
 echo "Installing global composer packages..."
 composer global require "consolidation/cgr"
 $HOME/.composer/vendor/bin/cgr "laravel/installer"
