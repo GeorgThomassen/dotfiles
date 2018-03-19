@@ -53,6 +53,7 @@ rm -rf $DOTFILES
 /usr/bin/git --git-dir $DOTFILES/.git remote add origin git@github.com:GeorgThomassen/dotfiles.git
 rm -rf $HOME/.zshrc $HOME/.gitignore $HOME/.gitconfig
 
+touch $HOME/.hushlogin
 ln -s $DOTFILES/zshrc $HOME/.zshrc
 ln -s $DOTFILES/aliases $HOME/.aliases
 ln -s $DOTFILES/gitconfig $HOME/.gitconfig
