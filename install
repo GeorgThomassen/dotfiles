@@ -16,6 +16,7 @@ echo "Installing apps..."
 brew cask install sublime-text
 brew cask install iterm2
 brew cask install moom
+brew cask install sip
 brew cask install sequel-pro
 brew cask install phpstorm
 
