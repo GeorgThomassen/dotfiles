@@ -18,11 +18,19 @@ alias gp="git push"
 alias gbd="git branch -d "
 alias nah="git reset --hard && git clean -df"
 
-alias p="phpunit"
-alias pf="phpunit --filter"
-alias test="phpunit"
-alias testf="phpunit --filter"
-alias testc="phpunit --coverage-text"
+alias p="find_phpunit"
+alias pf="find_phpunit --filter"
+alias pfc="find_phpunit --coverage-text"
+alias test="find_phpunit"
+alias testf="find_phpunit --filter"
+alias testc="find_phpunit --coverage-text"
+function find_phpunit() {
+    if [ -f vendor/bin/phpunit ]; then
+        vendor/bin/phpunit "$@"
+    else
+        phpunit "$@"
+    fi
+}
 
 alias art="php artisan"
 
