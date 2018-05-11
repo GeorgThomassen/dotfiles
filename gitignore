@@ -6,6 +6,7 @@
 
 # Editor files and folders
 /.idea
+_ide_helper.php
 
 Thumbs.db
 composer.phar
