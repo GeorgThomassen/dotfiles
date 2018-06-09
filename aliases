@@ -23,10 +23,9 @@ alias nah="git reset --hard && git clean -df"
 
 alias p="find_phpunit"
 alias pf="find_phpunit --filter"
-alias pfc="find_phpunit --coverage-text"
-alias test="find_phpunit"
-alias testf="find_phpunit --filter"
-alias testc="find_phpunit --coverage-text"
+alias pc="find_phpunit --coverage-text"
+alias pt="find_phpunit --tap"
+alias ptd="find_phpunit --testdox"
 function find_phpunit() {
     if [ -f vendor/bin/phpunit ]; then
         vendor/bin/phpunit "$@"
