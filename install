@@ -3,6 +3,7 @@ if [ -z "$HOME" ]; then echo "\$HOME not set"; exit 1; fi
 
 DOTFILES=$HOME/.dotfiles
 mkdir $DOTFILES
+mkdir $HOME/Sites
 
 echo
 echo "Installing Homebrew..."
@@ -38,7 +39,6 @@ echo "Installing global composer packages..."
 $HOME/.composer/vendor/bin/cgr "laravel/installer"
 $HOME/.composer/vendor/bin/cgr "laravel/valet"
 $HOME/.composer/vendor/bin/valet install
-mkdir $HOME/Sites
 $HOME/.composer/vendor/bin/valet park $HOME/Sites
 
 echo
