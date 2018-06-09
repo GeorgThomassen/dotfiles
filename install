@@ -34,7 +34,7 @@ brew services start mariadb
 
 echo
 echo "Installing global composer packages..."
-composer global require "consolidation/cgr"
+/usr/local/bin/composer global require "consolidation/cgr"
 $HOME/.composer/vendor/bin/cgr "laravel/installer"
 $HOME/.composer/vendor/bin/cgr "laravel/valet"
 $HOME/.composer/vendor/bin/valet install
