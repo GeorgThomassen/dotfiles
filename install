@@ -28,6 +28,7 @@ brew install composer
 brew install node
 brew install yarn
 brew install mariadb
+brew install bat
 
 # echo
 # echo "Installing PHP extensions"
