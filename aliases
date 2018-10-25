@@ -36,6 +36,8 @@ function find_phpunit() {
 
 alias art="php artisan"
 
+alias lungo="open 'lungo:toggle' -g"
+
 function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
