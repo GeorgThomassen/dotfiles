@@ -15,7 +15,7 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
 	],
 	"line_padding_bottom": 9,
 	"line_padding_top": 9,
@@ -28,5 +28,5 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?_",
-	"word_wrap": false
+	"word_wrap": false,
 }
