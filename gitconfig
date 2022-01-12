@@ -3,3 +3,5 @@
 [user]
 	name = Georg Thomassen
 	email = geo.cornelius@gmail.com
+[init]
+	defaultBranch = master
